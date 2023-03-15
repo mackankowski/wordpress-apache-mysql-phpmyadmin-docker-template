@@ -13,9 +13,7 @@ Required software:
 
 ## Setup
 
-> Setup GIT repository for changes revision
-
-1. For fresh new website, create a new folder and copy `docker-compose.yml` file there
+1. Pull the repository
 
 2. In the root directory, run: `docker compose up` (or `docker-compose up`)
 
