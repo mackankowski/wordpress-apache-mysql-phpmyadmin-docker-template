@@ -1,0 +1,42 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: xyz
+      WORDPRESS_DB_PASSWORD: xyz
+      WORDPRESS_DB_NAME: xyz
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./wordpress.ini:/usr/local/etc/php/conf.d/wordpress.ini 
+
+  db:
+    image: mariadb:10.5.8
+    restart: always
+    user: mysql
+    environment:
+      MYSQL_DATABASE: xyz
+      MYSQL_USER: xyz
+      MYSQL_PASSWORD: xyz
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./db:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
+
+volumes:
+  wordpress:
+  db:
+  phpmyadmin:
