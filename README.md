@@ -1,12 +1,17 @@
 # Wordpress - Docker container template
 
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [Migration](#migration)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Required software:
 
 - Docker: https://docs.docker.com/get-docker/
 
-## Set up
+## Setup
 
 > Setup GIT repository for changes revision
 
@@ -35,3 +40,14 @@ For more commands, go to: https://docs.docker.com/engine/reference/commandline/d
 5. For the remote website instance, open Wordpress admin dashboard and find `All-In-One-WP-Migration/Import` tab
 
 6. Click "Import from file", find save backup file, confirm and wait for completion
+
+## Troubleshooting
+
+### Bind for 0.0.0.0:8081 failed: port is already allocated
+
+Run the following command to identify the container which uses the port and remove it:
+
+```
+docker container ls
+docker rm -f <container-name>
+```
