@@ -54,7 +54,7 @@ docker rm -f <container-name>
 
 or remove all containers at once:
 
-`
+```
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
-`
+```
