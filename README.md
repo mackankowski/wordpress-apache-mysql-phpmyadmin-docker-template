@@ -17,7 +17,7 @@ Required software:
 
 1. Pull the repository
 
-2. In the root directory, run: `docker compose up` (or `docker-compose up`)
+2. In the root directory, run: `docker-compose up`
 
 The website will available at http://localhost (:80)
 
@@ -58,3 +58,8 @@ or remove all containers at once:
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q) -f
 ```
+
+### Error response from daemon: error while creating mount source path '...': chown ...: permission denied
+
+Run as administrator: `sudo docker-compose up`
+
