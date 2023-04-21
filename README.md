@@ -13,6 +13,8 @@ Required software:
 
 ## Setup
 
+0: Run Docker, e.g. by using Colima: [Install & run Docker on macOS (gist)](https://gist.github.com/mackankowski/7b6b1d861359d31b8a28195432d86d4d)
+
 1. Pull the repository
 
 2. In the root directory, run: `docker compose up` (or `docker-compose up`)
@@ -49,3 +51,10 @@ Run the following command to identify the container which uses the port and remo
 docker container ls
 docker rm -f <container-name>
 ```
+
+or remove all containers at once:
+
+`
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+`
