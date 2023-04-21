@@ -55,11 +55,5 @@ docker rm -f <container-name>
 or remove all containers at once:
 
 ```
-docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q) -f
 ```
-
-### Error response from daemon: error while creating mount source path '...': chown ...: permission denied
-
-Run as administrator: `sudo docker-compose up`
-
