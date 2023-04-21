@@ -16,7 +16,6 @@ services:
       - db
       image: wordpress:latest
       restart: always
-      user: root
       ports:
         - 80:80
       environment:
