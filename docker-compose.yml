@@ -26,6 +26,7 @@ services:
         TAR_OPTIONS: --no-same-owner
       volumes:
         - ./wordpress:/var/www/html
+        - ./wordpress.ini:/usr/local/etc/php/conf.d/wordpress.ini 
   phpmyadmin:
     depends_on:
       - db
