@@ -52,7 +52,7 @@ docker container ls
 docker rm -f <container-name>
 ```
 
-or remove all containers at once:
+or remove all containers at once (repeat running until all are killed):
 
 ```
 docker rm $(docker ps -a -q) -f
