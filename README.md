@@ -1,20 +1,20 @@
 # Wordpress - Docker container template
 
 - [Prerequisites](#prerequisites)
-- [Setup](#setup)
+- [Running](#running)
 - [Migration](#migration)
-- [Troubleshooting](#troubleshooting)
+- [Commands](#commands)
 
 ## Prerequisites (macOS)
 
-Required software:
+Install [Homebrew](https://brew.sh/) packages:
 
-- [Homebrew](https://brew.sh/)
-
-- `brew install colima`
-- `brew install kubectl`
-- `brew install docker`
-- `brew install docker-compose`
+```
+brew install colima
+brew install kubectl
+brew install docker
+brew install docker-compose
+```
 
 ## Running
 
@@ -42,7 +42,7 @@ The phpMyAdmin dashboard will be available at http://localhost:9090
 
 6. Click "Import from file", find save the backup file, confirm, and wait for completion
 
-## Docker commands
+## Commands
 
 Remove all containers:
 
