@@ -18,19 +18,15 @@ Required software:
 
 ## Running
 
-0. [Install & run Docker on macOS (gist)](https://gist.github.com/mackankowski/7b6b1d861359d31b8a28195432d86d4d) 
+0. Run Colima (containers runtime): `colima start --with-kubernetes` (to stop: `colima stop`)
 
 1. Set environment: `chmod +x env.sh && source env.sh`
 
-2. Run the app: `docker-compose up`
+2. Initialize the app: `docker-compose up` (to stop: `docker-compose down`)
 
 The Wordpress app will be available at http://localhost:8080
 
 The phpMyAdmin dashboard will be available at http://localhost:9090
-
-3. To stop the application container, run: `docker-compose down`
-
-For more commands, go to: https://docs.docker.com/engine/reference/commandline/docker/
 
 ## Migration
 
