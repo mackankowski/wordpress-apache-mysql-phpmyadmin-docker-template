@@ -5,23 +5,28 @@
 - [Migration](#migration)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+## Prerequisites (macOS)
 
 Required software:
 
-- Docker: https://docs.docker.com/get-docker/
+- [Homebrew](https://brew.sh/)
 
-## Setup
+- `brew install colima`
+- `brew install kubectl`
+- `brew install docker`
+- `brew install docker-compose`
 
-0: Run Docker, e.g. by using Colima: [Install & run Docker on macOS (gist)](https://gist.github.com/mackankowski/7b6b1d861359d31b8a28195432d86d4d)
+## Running
 
-1. Pull the repository
+0. [Install & run Docker on macOS (gist)](https://gist.github.com/mackankowski/7b6b1d861359d31b8a28195432d86d4d) 
 
-2. In the root directory, run: `docker-compose up`
+1. Set environment: `chmod +x env.sh && ./env.sh`
 
-The website will be available at http://localhost:8080
+2. Run the app: `docker-compose up`
 
-(Also, there is phpadmin available at http://localhost:8081)
+The Wordpress app will be available at http://localhost:8080
+
+The phpMyAdmin dashboard will be available at http://localhost:9090
 
 3. To stop the application container, run: `docker-compose down`
 
@@ -41,19 +46,16 @@ For more commands, go to: https://docs.docker.com/engine/reference/commandline/d
 
 6. Click "Import from file", find save the backup file, confirm, and wait for completion
 
-## Troubleshooting
+## Docker commands
 
-### Bind for 0.0.0.0:8081 failed: port is already allocated
+Remove all containers:
 
-Run the following command to identify the container which uses the port and remove it:
+`docker rm $(docker ps -aq) -f`
 
-```
-docker container ls
-docker rm -f <container-name>
-```
+Remove all images:
 
-or remove all containers at once (repeat running until all are killed):
+`docker rmi $(docker images -aq) -f`
 
-```
-docker rm $(docker ps -a -q) -f
-```
+Both commands at once:
+
+`docker rm $(docker ps -aq) -f && docker rmi $(docker images -aq) -f`
