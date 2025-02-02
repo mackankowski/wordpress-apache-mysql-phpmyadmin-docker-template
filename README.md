@@ -20,7 +20,7 @@ Required software:
 
 0. [Install & run Docker on macOS (gist)](https://gist.github.com/mackankowski/7b6b1d861359d31b8a28195432d86d4d) 
 
-1. Set environment: `chmod +x env.sh && ./env.sh`
+1. Set environment: `chmod +x env.sh && source env.sh`
 
 2. Run the app: `docker-compose up`
 
@@ -56,6 +56,6 @@ Remove all images:
 
 `docker rmi $(docker images -aq) -f`
 
-Both commands at once:
+Both actions at once:
 
 `docker rm $(docker ps -aq) -f && docker rmi $(docker images -aq) -f`
