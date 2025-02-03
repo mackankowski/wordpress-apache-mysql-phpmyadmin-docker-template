@@ -1,13 +1,14 @@
-# Wordpress (Apache) - Docker container template
+# WordPress (w/Apache) - Docker container template
 
+- [Stack](#stack)
 - [Prerequisites](#prerequisites)
 - [Running](#running)
 - [Migration](#migration)
 - [Commands](#commands)
 
-## Stack:
+## Stack
 
-- Wordpress (Apache)
+- WordPress (w/Apache)
 - MySQL
 - phpMyAdmin
 
